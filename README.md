@@ -39,3 +39,9 @@ npm run lint || yarn lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+#
+
+<br>
+
+<img src="https://www.devapp.it/wordpress/wp-content/uploads/2016/06/JSONPlaceholder-fake-online-api-rest.jpg" width="400"/>
