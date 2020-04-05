@@ -44,4 +44,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 <br>
 
+<img src="https://cdn.cjr.org/wp-content/uploads/2017/01/jim_vandehei_axios.png" width="400"/>
 <img src="https://ultimateqa.com/wp-content/uploads/2020/03/jsonplaceholder.png" width="400"/>
