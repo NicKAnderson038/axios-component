@@ -1,34 +1,41 @@
 # axios-component
 
 ## Project setup
+
 ```
-npm install
+npm install || yarn
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-npm run serve
+npm run serve || yarn serve
 ```
 
 ### Compiles and minifies for production
+
 ```
-npm run build
+npm run build || yarn build
 ```
 
 ### Run your unit tests
+
 ```
-npm run test:unit
+npm run test:unit || yarn test:unit
 ```
 
 ### Run your end-to-end tests
+
 ```
-npm run test:e2e
+npm run test:e2e || yarn test:e2e
 ```
 
 ### Lints and fixes files
+
 ```
-npm run lint
+npm run lint || yarn lint
 ```
 
 ### Customize configuration
+
 See [Configuration Reference](https://cli.vuejs.org/config/).
