@@ -34,9 +34,18 @@
     </v-app-bar>
 
     <v-content>
-      <div class="d-flex align-center">
-        <FetchButton />
-      </div>
+      <v-layout justify-center>
+        <v-card-actions>
+          <v-btn to="/withData">
+            <span>WITH DATA</span>
+          </v-btn>
+          <v-btn to="/comp">POST COMPOSITION API</v-btn>
+          <v-btn color="blue" dark to="/">HOME</v-btn>
+        </v-card-actions>
+      </v-layout>
+    </v-content>
+    <router-view />
+    <v-content>
       <HelloWorld />
     </v-content>
   </v-app>
@@ -44,14 +53,12 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
-import FetchButton from './components/FetchButton'
 
 export default {
   name: 'App',
 
   components: {
     HelloWorld,
-    FetchButton,
   },
 
   data: () => ({
