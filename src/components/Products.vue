@@ -11,7 +11,7 @@
               <div v-for="p in products" :key="p.id" class="noselect">
                 Product Name: {{ p.name }} - Product Price: ${{ p.price }}
                 <v-icon
-                  @click="() => deleteAProduct(p.id)"
+                  @click="() => deleteProduct(p.id)"
                   color="orange darken-2"
                   >mdi-cancel</v-icon
                 >
@@ -19,6 +19,7 @@
             </v-flex>
           </v-card-text>
         </v-card>
+        <div v-else :style="{ height: '40px' }"></div>
       </v-flex>
     </v-layout>
   </div>
@@ -41,9 +42,6 @@ export default {
         name: 'New Product',
         price: Math.floor(Math.random() * 1000).toString(),
       })
-    },
-    deleteAProduct(id) {
-      this.deleteProduct(id)
     },
   },
 }
