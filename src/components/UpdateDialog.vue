@@ -20,27 +20,28 @@
                 required
                 outlined
                 :rules="nameRules"
-                @keyup="validate"
               ></v-text-field
             ></v-card-text>
             <v-card-text class="text-xs-center title px-3 py-5 sbdBlackGrey">
               <v-text-field
                 class="text-field"
-                v-model="amount"
+                v-model="price"
                 :label="'Enter Amount'"
                 required
                 outlined
                 :rules="amountRules"
-                @keyup="validate"
               ></v-text-field
             ></v-card-text>
           </div>
-          <v-card-actions class="pr-3 pl-1">
-            <v-layout justify-center>
+          <v-card-actions>
+            <v-layout>
               <v-flex>
-                <v-btn large outlined @click.native="reset">CANCEL</v-btn>
-                <v-spacer></v-spacer>
-                <v-btn large light color="blue" @click="true">UPDATE</v-btn>
+                <div class="btn">
+                  <v-btn large outlined @click.native="reset">CANCEL</v-btn>
+                  <v-btn large light color="blue" @click="validate"
+                    >UPDATE</v-btn
+                  >
+                </div>
               </v-flex>
             </v-layout>
           </v-card-actions>
@@ -52,6 +53,8 @@
 <script>
 // import isUndefined from 'lodash/fp/isUndefined'
 // import isEmpty from 'lodash/fp/isEmpty'
+const isNumber = /^\d+$/
+
 export default {
   name: 'UpdateDialog',
   props: {
@@ -67,16 +70,18 @@ export default {
       type: Boolean,
       required: true,
     },
-    name: String,
-    amount: String,
+    id: Number,
   },
-  data() {
-    return {
-      nameRules: [v => !!v || 'Name required'],
-      amountRules: [v => !!v || 'Amount required'],
-      ifInvalidDisable: true,
-    }
-  },
+  data: () => ({
+    nameRules: [v => !!v || 'Name required'],
+    amountRules: [
+      v => !!v || 'Amount required',
+      v => isNumber.test(v) || 'Numbers Only',
+      v => v >= 1 || 'Minimun amout is $1',
+    ],
+    name: '',
+    price: '',
+  }),
   computed: {
     show: {
       get() {
@@ -89,7 +94,14 @@ export default {
   },
   methods: {
     validate() {
-      this.ifInvalidDisable = !this.$refs.form.validate()
+      if (this.$refs.form.validate()) {
+        this.$emit('updateProduct', {
+          id: this.id,
+          name: this.name,
+          price: this.price,
+        })
+        this.reset()
+      }
     },
     printLabel() {
       const image =
@@ -128,5 +140,9 @@ export default {
 .text-field {
   padding-left: 20px;
   padding-right: 20px;
+}
+.btn {
+  display: flex;
+  justify-content: space-evenly;
 }
 </style>

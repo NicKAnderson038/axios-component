@@ -10,9 +10,7 @@
             <v-flex>
               <div v-for="p in products" :key="p.id" class="noselect">
                 Product Name: {{ p.name }} - Product Price: ${{ p.price }}
-                <v-icon
-                  @click=";(showDialog = true), captureNameAmount"
-                  color="black"
+                <v-icon @click="updateValues(p)" color="black"
                   >mdi-pencil</v-icon
                 >
                 <v-icon
@@ -31,8 +29,8 @@
       v-model="showDialog"
       :title="'Update Product'"
       :text="'Update Name &/or Amount.'"
-      :amount="amount"
-      :name="name"
+      :id="id"
+      @updateProduct="updateProduct"
     />
   </div>
 </template>
@@ -53,8 +51,7 @@ export default {
   },
   data: () => ({
     showDialog: false,
-    name: null,
-    amount: null,
+    id: null,
   }),
   methods: {
     createAProduct() {
@@ -64,10 +61,9 @@ export default {
         price: Math.floor(Math.random() * 1000).toString(),
       })
     },
-    captureNameAmount(event) {
-      this.amount = '1'
-      this.name = 'Ted'
-      console.log(event)
+    updateValues({ id }) {
+      this.id = id
+      this.showDialog = true
     },
   },
 }

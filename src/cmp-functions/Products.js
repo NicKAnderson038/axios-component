@@ -9,7 +9,6 @@ export const useProducts = () => {
 
   const updateProduct = ({ id, name, price }) => {
     const itemIndex = products.value.findIndex(p => p.id === id)
-
     if (itemIndex < 0) {
       return
     }
@@ -19,7 +18,6 @@ export const useProducts = () => {
 
   const deleteProduct = id => {
     const itemIndex = products.value.findIndex(p => p.id === id)
-
     if (itemIndex < 0) {
       return
     }
