@@ -1,5 +1,12 @@
 # axios-component
 
+### Deploying to GitHub [Pages](https://nickanderson038.github.io/axios-component/).
+
+1. Follow <a href="https://medium.com/@Roli_Dori/deploy-vue-cli-3-project-to-github-pages-ebeda0705fbd" target="_blank">instructions</a> on deployment.
+2. Make sure to add the `--no-verify` flag to end of the `git commit` step.
+
+#
+
 ## Project setup
 
 ```
