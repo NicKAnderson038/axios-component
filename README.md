@@ -17,6 +17,8 @@ git subtree push --prefix dist origin gh-pages
 
 #
 
+<br>
+
 ## Project setup
 
 ```
@@ -53,13 +55,15 @@ npm run test:e2e || yarn test:e2e
 npm run lint || yarn lint
 ```
 
-### Customize configuration
+<br>
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Customize configuration [Example](https://cli.vuejs.org/config/).
+
+### useFetch: composition [api Example](https://morioh.com/p/c64947bb64ad).
 
 #
 
 <br>
 
 <img src="https://cdn.cjr.org/wp-content/uploads/2017/01/jim_vandehei_axios.png" width="400"/>
-<img src="https://ultimateqa.com/wp-content/uploads/2020/03/jsonplaceholder.png" width="400"/>
+<img src="https://miro.medium.com/max/1200/1*D8V3z6kKx2AD-L68LgN96g.png" width="400"/>

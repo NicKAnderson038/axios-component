@@ -39,7 +39,8 @@
           <v-btn to="/withData">
             <span>WITH DATA</span>
           </v-btn>
-          <v-btn to="/comp">POST COMPOSITION API</v-btn>
+          <v-btn to="/comp">COMPOSITION API</v-btn>
+          <v-btn to="/brews">BREWS API</v-btn>
           <v-btn color="blue" dark to="/">HOME</v-btn>
         </v-card-actions>
       </v-layout>
