@@ -1,11 +1,11 @@
 import { ref, computed } from '@vue/composition-api'
 
-const useBreweries = ref([])
+const setBreweries = ref([])
 
 export default function() {
   // super complicated state mgmt logic
   return {
-    getBreweries: computed(() => useBreweries.value),
-    useBreweries,
+    getBreweries: computed(() => setBreweries.value),
+    setBreweries,
   }
 }

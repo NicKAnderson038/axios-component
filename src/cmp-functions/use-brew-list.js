@@ -3,11 +3,11 @@ import useFetch from './use-fetch'
 import useState from './use-state'
 const API = 'https://api.openbrewerydb.org/breweries/'
 
-// const useBreweries = ref([])
+// const setBreweries = ref([])
 // function useState() {
 //   // super complicated state mgmt logic
 //   return {
-//     getBreweries: computed(() => useBreweries.value),
+//     getBreweries: computed(() => setBreweries.value),
 //   }
 // }
 
@@ -24,7 +24,7 @@ export default function() {
     )
     fetchData()
     breweries.list = response
-    useState().useBreweries.value = response
+    useState().setBreweries.value = response
     breweries.error = error
     breweries.fetching = fetching
   }
@@ -38,6 +38,6 @@ export default function() {
     query,
     // getBreweries
     // getBreweries: useState().getBreweries,
-    // getState: computed(() => useBreweries.value),
+    // getState: computed(() => setBreweries.value),
   }
 }
