@@ -11,7 +11,10 @@ npm run build || yarn build
 
 git add dist && git commit -m "Initial dist subtree commit" --no-verify
 
-# First time creation: git subtree push -u --prefix dist origin gh-pages
+# 1st time creation:
+git subtree push -u --prefix dist origin gh-pages
+
+# Every time after:
 git subtree push --prefix dist origin gh-pages
 ```
 
