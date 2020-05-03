@@ -29,6 +29,11 @@ const routes = [
     name: 'Brews',
     component: () => import('../views/Brews.vue'),
   },
+  {
+    path: '/brews-compare',
+    name: 'BrewsCompare',
+    component: () => import('../views/BrewsCompare.vue'),
+  },
 ]
 
 const router = new VueRouter({

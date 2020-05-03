@@ -1,39 +1,15 @@
 <template>
   <div class="brews">
     <br />
-    <h2>Brew Search</h2>
+    <h2>Ref Global State</h2>
     <br />
-    <section>
-      <form>
-        <v-flex>
-          <v-text-field
-            v-model="val"
-            label="Search by brewy name"
-            outlined
-            readonly
-          ></v-text-field>
-          <div class="btn">
-            <v-btn small @click="clear">Clear</v-btn>
-            <v-btn small color="primary" @click="submit">Submit</v-btn>
-          </div>
-        </v-flex>
-      </form>
-    </section>
-    <div v-if="error">
-      <h2>Error: {{ error }}</h2>
-    </div>
-    <div v-if="fetching">
-      <br />
-      <v-progress-circular
-        :size="70"
-        :width="7"
-        indeterminate
-        color="amber"
-      ></v-progress-circular>
-    </div>
     <br />
     <v-card>
-      <div class="search-results" v-for="brewery in list" :key="brewery.id">
+      <div
+        class="search-results"
+        v-for="brewery in getBreweries.value"
+        :key="brewery.id"
+      >
         <v-card-text>
           <ul>
             <li>
@@ -65,30 +41,29 @@
         </v-card-text>
       </div>
     </v-card>
+    <br />
+    <v-card v-if="getBreweries.value">
+      <v-card-text>
+        <pre>{{ getBreweries.value }}</pre>
+      </v-card-text>
+    </v-card>
+    <v-card v-else>
+      <v-card-text>Search for some Brews!</v-card-text>
+    </v-card>
   </div>
 </template>
 
 <script>
-import useBrewList from '@/cmp-functions/use-brew-list'
+import useState from '@/cmp-functions/use-state'
+// import useBrewList from '@/cmp-functions/use-brew-list'
 import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   setup() {
-    // const { submitted, list, val, error, fetching } = useBrewList()
-    // return {
-    //   val,
-    //   list,
-    //   submitted,
-    //   error,
-    //   fetching,
-    // }
     return {
-      ...useBrewList(),
+      ...useState(),
     }
   },
-  // mounted() {
-  //   this.submitted()
-  // },
   methods: {
     clear() {
       this.val = ''
