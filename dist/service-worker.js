@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.13e62f55fab7c47fd81d0af39c958691.js"
+  "/precache-manifest.18d00e9fe41e15576a088f3f1b4de68f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "axios-component"});
